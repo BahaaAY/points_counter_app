@@ -4,8 +4,17 @@ void main() {
   runApp(PointsCounter());
 }
 
-class PointsCounter extends StatelessWidget {
-  const PointsCounter({Key? key}) : super(key: key);
+class PointsCounter extends StatefulWidget {
+   PointsCounter({Key? key}) : super(key: key);
+
+  @override
+  State<PointsCounter> createState() => _PointsCounterState();
+}
+
+class _PointsCounterState extends State<PointsCounter> {
+  int teamA = 0;
+
+  int teamB = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -50,25 +59,37 @@ class PointsCounter extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        "999",
+                        "${teamA}",
                         style: TextStyle(
                           fontSize: 100,
                         ),
                       ),
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          setState(() {
+                            teamA+=1;
+                          });
+                        },
                         child: Text(
                           'Add 1 Point',
                         ),
                       ),
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          setState(() {
+                            teamA+=2;
+                          });
+                        },
                         child: Text(
                           'Add 2 Point',
                         ),
                       ),
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          setState(() {
+                            teamA+=3;
+                          });
+                        },
                         child: Text(
                           'Add 3 Point',
                         ),
@@ -91,25 +112,37 @@ class PointsCounter extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        "999",
+                        "$teamB",
                         style: TextStyle(
                           fontSize: 100,
                         ),
                       ),
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          setState(() {
+                            teamB+=1;
+                          });
+                        },
                         child: Text(
                           'Add 1 Point',
                         ),
                       ),
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          setState(() {
+                            teamB+=2;
+                          });
+                        },
                         child: Text(
                           'Add 2 Point',
                         ),
                       ),
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          setState(() {
+                            teamB+=3;
+                          });
+                        },
                         child: Text(
                           'Add 3 Point',
                         ),
@@ -120,7 +153,12 @@ class PointsCounter extends StatelessWidget {
               ),
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                setState(() {
+                  teamA=0;
+                  teamB=0;
+                });
+              },
               child: Text(
                 'Reset',
               ),
