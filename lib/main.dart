@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const PointsCounter());
+  runApp(PointsCounter());
 }
 
 class PointsCounter extends StatelessWidget {
@@ -10,6 +10,7 @@ class PointsCounter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -22,8 +23,110 @@ class PointsCounter extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.orange,
       ),
-      home: const Scaffold(
-
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text(
+            'Basketball Points Counter',
+            style: TextStyle(
+              color: Colors.white,
+            ),
+          ),
+        ),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            IntrinsicHeight(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text(
+                        "Team A",
+                        style: TextStyle(
+                          fontSize: 42,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        "999",
+                        style: TextStyle(
+                          fontSize: 100,
+                        ),
+                      ),
+                      ElevatedButton(
+                        onPressed: () {},
+                        child: Text(
+                          'Add 1 Point',
+                        ),
+                      ),
+                      ElevatedButton(
+                        onPressed: () {},
+                        child: Text(
+                          'Add 2 Point',
+                        ),
+                      ),
+                      ElevatedButton(
+                        onPressed: () {},
+                        child: Text(
+                          'Add 3 Point',
+                        ),
+                      ),
+                    ],
+                  ),
+                  const VerticalDivider(
+                    color: Colors.grey,
+                    thickness: 0.8,
+                    indent: 12,
+                    endIndent: 12,
+                  ),
+                  Column(
+                    children: [
+                      Text(
+                        "Team B",
+                        style: TextStyle(
+                          fontSize: 42,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        "999",
+                        style: TextStyle(
+                          fontSize: 100,
+                        ),
+                      ),
+                      ElevatedButton(
+                        onPressed: () {},
+                        child: Text(
+                          'Add 1 Point',
+                        ),
+                      ),
+                      ElevatedButton(
+                        onPressed: () {},
+                        child: Text(
+                          'Add 2 Point',
+                        ),
+                      ),
+                      ElevatedButton(
+                        onPressed: () {},
+                        child: Text(
+                          'Add 3 Point',
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              child: Text(
+                'Reset',
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
