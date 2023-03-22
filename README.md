@@ -1,6 +1,15 @@
 # points_counter_app
 
-A new Flutter project.
+A Simple basketball points counter using basic flutter ui and stateful widget
+
+
+<p align="center">
+<img src="S1.png" width="300">
+</p>
+
+<p align="center">
+<img src="S2.png" width="300">
+</p>
 
 ## Getting Started
 
